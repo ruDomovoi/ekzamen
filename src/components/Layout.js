@@ -73,6 +73,7 @@ export default function Layout({ children }) {
                   className="nav-link"
                   style={{
                     position: 'absolute',
+                    zIndex: 50,
                     right: 0,
                     top: 'calc(100% + 2px)',
                     whiteSpace: 'nowrap',

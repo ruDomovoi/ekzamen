@@ -53,6 +53,8 @@ main {
 }
 
 .nav {
+  position: relative;
+  z-index: 30;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -121,7 +123,9 @@ main {
   cursor: pointer;
   background: var(--accent);
   color: #fff;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transform: translateY(0) scale(1);
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease,
+    transform 0.2s ease, box-shadow 0.25s ease;
 }
 
 .button.secondary {
@@ -132,6 +136,18 @@ main {
 
 .button:hover {
   background: #163b7b;
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 8px 20px rgba(21, 25, 34, 0.2);
+}
+
+.button:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 2px 8px rgba(21, 25, 34, 0.2);
+}
+
+.button:focus-visible {
+  outline: 2px solid rgba(31, 75, 153, 0.35);
+  outline-offset: 2px;
 }
 
 .card {
@@ -217,12 +233,21 @@ textarea:focus {
   overflow: hidden;
   border: 2px solid var(--stroke);
   box-shadow: none;
+  height: 320px;
 }
 
 .slider-track {
   display: grid;
   grid-template-columns: repeat(4, 100%);
   transition: transform 0.6s ease;
+  height: 100%;
+}
+
+.slider-track img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .slider-controls {
@@ -241,6 +266,17 @@ textarea:focus {
   display: grid;
   place-items: center;
   cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.icon-button:hover {
+  transform: translateY(-1px) scale(1.04);
+  background: #f1f5fb;
+  border-color: #8fa4c5;
+}
+
+.icon-button:active {
+  transform: translateY(0) scale(0.96);
 }
 
 .toast {

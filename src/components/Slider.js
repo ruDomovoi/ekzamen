@@ -1,11 +1,10 @@
 ﻿import { useEffect, useState } from 'react';
+import image06 from '@/pages/images/image06.jpg';
+import image10 from '@/pages/images/image10.webp';
+import image11 from '@/pages/images/image11.jpg';
+import image12 from '@/pages/images/image12.webp';
 
-const slides = [
-  'https://t3.ftcdn.net/jpg/15/23/80/42/360_F_1523804280_BUzzSXmimPEOpCrPDqipI1iUoJJxAkM4.jpg',
-  'https://avatars.mds.yandex.net/i?id=fccfd0322f73e1f3da0f36f55c7a177d_l-4382387-images-thumbs&n=13g',
-  'https://i.pinimg.com/originals/45/f2/9e/45f29e782e09bc9f2d0e1eb7361d7402.jpg',
-  'https://i.pinimg.com/originals/fa/df/5b/fadf5b8e22d317fe6c9f58b2537e86a9.jpg'
-];
+const slides = [image06.src, image10.src, image11.src, image12.src];
 
 export default function Slider() {
   const [index, setIndex] = useState(0);
